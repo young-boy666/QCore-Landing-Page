@@ -12,29 +12,16 @@ const Logo: React.FC<LogoProps> = ({ className = "", iconOnly = false, light = f
   const filterStyle = light ? { filter: 'brightness(0) invert(1)' } : {};
 
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
-      {/* PNG Logo Asset */}
+    <div className={`flex items-center ${className}`}>
       <img 
         src="Main_logo.png" 
         alt="Nexus Technology"
         style={filterStyle}
         className={`
-          h-8 md:h-10 w-auto object-contain flex-shrink-0
-          ${iconOnly ? 'mx-auto' : ''}
+          h-auto object-contain
+          ${iconOnly ? 'w-10 md:w-12' : 'w-32 md:w-40'}
         `}
       />
-      
-      {/* Brand Wordmark - ensures name is visible even if PNG is icon-only or loading */}
-      {!iconOnly && (
-        <div className="flex flex-col leading-[0.85] select-none">
-          <span className={`text-2xl font-[900] tracking-[-0.04em] ${light ? 'text-white' : 'text-gray-900'}`}>
-            NEXUS
-          </span>
-          <span className={`text-[9px] font-extrabold tracking-[0.35em] uppercase ${light ? 'text-white/70' : 'text-brand-purple'}`}>
-            Technology
-          </span>
-        </div>
-      )}
     </div>
   );
 };

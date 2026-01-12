@@ -36,7 +36,7 @@ const Process: React.FC = () => {
     <section id="process" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Rapid, Seamless Deployment.</h2>
+          <h2 className="text-4xl font-bold mb-4">Rapid and Seamless Deployment.</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Go from raw data to actionable intelligence in a fraction of the time of a custom build, with minimal disruption to your team.
           </p>
@@ -45,13 +45,13 @@ const Process: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {steps.map((step, idx) => (
             <div key={idx} className="relative group">
-              <div className="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-xl shadow-gray-200/50 hover:shadow-2xl hover:shadow-pink-200/20 transition-all duration-500 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-pink-50 text-pink-600 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+              <div className="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-xl shadow-gray-200/50 hover:shadow-2xl hover:shadow-brand-purple/10 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-16 h-16 bg-brand-purple/5 text-brand-purple rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                   {step.icon}
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{step.description}</p>
-                <div className="mt-8 text-pink-600 font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="mt-8 text-brand-purple font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
                   Phase 0{idx + 1}
                 </div>
               </div>

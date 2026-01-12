@@ -14,7 +14,7 @@ const Process: React.FC = () => {
     },
     {
       title: "Configure",
-      description: "We apply your branding and customize the data model for your needs.",
+      description: "We apply your branding and customise the data model for your needs.",
       icon: (
         <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
@@ -33,7 +33,7 @@ const Process: React.FC = () => {
   ];
 
   return (
-    <section id="process" className="py-24 bg-gray-50">
+    <section id="process" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Rapid and Seamless Deployment.</h2>
@@ -45,7 +45,7 @@ const Process: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {steps.map((step, idx) => (
             <div key={idx} className="relative group">
-              <div className="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-xl shadow-gray-200/50 hover:shadow-2xl hover:shadow-brand-purple/10 transition-all duration-500 hover:-translate-y-2">
+              <div className="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-xl shadow-gray-200/50 hover:shadow-[0_20px_50px_-12px_rgba(188,45,183,0.4)] hover:border-brand-purple/30 transition-all duration-500 hover:scale-105 hover:-translate-y-2 cursor-default">
                 <div className="w-16 h-16 bg-brand-purple/5 text-brand-purple rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                   {step.icon}
                 </div>
@@ -56,9 +56,9 @@ const Process: React.FC = () => {
                 </div>
               </div>
               {idx < 2 && (
-                <div className="hidden lg:block absolute top-1/2 -right-6 transform translate-x-1/2 -translate-y-1/2 text-gray-200">
+                <div className="hidden lg:block absolute top-1/2 -right-6 transform translate-x-1/2 -translate-y-1/2 text-brand-blue animate-pulse">
                   <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </div>
               )}

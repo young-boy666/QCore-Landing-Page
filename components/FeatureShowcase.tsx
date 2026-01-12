@@ -8,23 +8,23 @@ const FeatureShowcase: React.FC = () => {
   const features = {
     finance: {
       title: "Working Capital Insights",
-      description: "Monitor your financial health in real-time. Identify cash flow trends instantly and optimize collections with deep drill-downs into WIP and aging.",
+      description: "Monitor your financial health in real-time. Identify cash flow trends instantly and optimise collections with deep drill-downs into WIP and ageing.",
       metrics: [
         { label: "Net Bill YTD", value: "£323.0k", change: "+1.44%" },
         { label: "WIP Value YTD", value: "£254.0k", change: "-14.52%" },
         { label: "Avg Days to Pay", value: "488.7", change: "-118.2" },
       ],
-      image: "./Dashboard_Finance.png"
+      image: "Dashboard_Finance.png"
     },
     performance: {
       title: "Utilisation & Performance",
-      description: "Track team performance against targets. Optimize resource allocation with deep historical context and productivity tracking across departments.",
+      description: "Track team performance against targets. Optimise resource allocation with deep historical context and productivity tracking across departments.",
       metrics: [
         { label: "Avg Hours/Week", value: "21.1", change: "-8.1%" },
         { label: "Overtime %", value: "100.0%", change: "+0.0%" },
         { label: "Productivity %", value: "69.3%", change: "-4.5%" },
       ],
-      image: "./Dashboard_Utilisation.png"
+      image: "Dashboard_Utilisation.png"
     }
   };
 
@@ -87,7 +87,7 @@ const FeatureShowcase: React.FC = () => {
              <div className="relative rounded-3xl border border-gray-200 shadow-2xl overflow-hidden bg-gray-50 aspect-video flex items-center justify-center group">
                 {!imageLoaded && (
                   <div className="absolute inset-0 flex items-center justify-center bg-gray-100 animate-pulse">
-                    <div className="text-gray-300 font-bold tracking-widest uppercase">Initializing View...</div>
+                    <div className="text-gray-300 font-bold tracking-widest uppercase">Loading Dashboard...</div>
                   </div>
                 )}
                 
@@ -97,22 +97,6 @@ const FeatureShowcase: React.FC = () => {
                   alt={current.title} 
                   className={`w-full h-full object-contain transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                   onLoad={() => setImageLoaded(true)}
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    const parent = target.parentElement;
-                    if (parent) {
-                      parent.innerHTML = `
-                        <div class="flex flex-col items-center justify-center p-12 text-center bg-gray-900 w-full h-full text-white">
-                          <h4 class="text-xl font-bold mb-2">Image Load Error</h4>
-                          <p class="text-gray-400 text-sm max-w-xs mb-4">Code attempted to load: <strong>${current.image}</strong></p>
-                          <div class="text-[10px] font-mono bg-white/10 px-3 py-2 rounded text-brand-blue uppercase tracking-tighter">
-                            Check filename case & root location
-                          </div>
-                        </div>
-                      `;
-                    }
-                  }}
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none"></div>

@@ -16,7 +16,12 @@ const Navbar: React.FC = () => {
         <a href="#pricing" className="hover:text-brand-purple transition-colors">Pricing</a>
       </div>
 
-      <a href="#contact" className="bg-brand-purple text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all shadow-lg shadow-brand-purple/20">
+      <a 
+        href="https://www.nexustech.je/contact/" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-brand-purple text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all shadow-lg shadow-brand-purple/20"
+      >
         Book Session
       </a>
     </nav>

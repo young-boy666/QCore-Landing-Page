@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Logo from './Logo';
 
 const Transformation: React.FC = () => {
   return (
@@ -31,20 +32,11 @@ const Transformation: React.FC = () => {
         <div className="my-12 md:my-0 relative">
           <div className="w-48 h-48 md:w-64 md:h-64 bg-brand-purple/20 rounded-full blur-[100px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
           
-          {/* Centering Main_logo.png */}
           <div className="relative w-44 h-44 md:w-64 md:h-64 bg-white rounded-[2.5rem] rotate-45 flex items-center justify-center shadow-[0_0_60px_rgba(188,45,183,0.4)] transition-transform hover:scale-105 duration-500 overflow-hidden border border-gray-100">
-            <div className="rotate-[-45deg] flex flex-col items-center justify-center w-full h-full p-8">
-              <img 
-                src="./Main_logo.png" 
-                alt="Nexus Core" 
-                className="w-full h-auto object-contain max-h-24 md:max-h-32 drop-shadow-sm"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                }}
-              />
+            <div className="rotate-[-45deg] flex flex-col items-center justify-center w-full h-full p-6">
+              <Logo className="scale-110 md:scale-125" />
               <div className="mt-4 text-center">
-                <span className="block text-[10px] font-black opacity-60 uppercase tracking-[0.3em] text-gray-900">Automation Core</span>
+                <span className="block text-[10px] font-black opacity-40 uppercase tracking-[0.3em] text-gray-900">Automation Core</span>
               </div>
             </div>
           </div>

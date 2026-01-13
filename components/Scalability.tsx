@@ -1,9 +1,11 @@
 
 import React from 'react';
+import NetworkBackground from './NetworkBackground';
 
 const Scalability: React.FC = () => {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
+      <NetworkBackground />
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div>
           <h2 className="text-4xl font-bold mb-8">A Foundation Built for Growth.</h2>
@@ -36,8 +38,8 @@ const Scalability: React.FC = () => {
           {/* Scientific Expansion Visual: Flow from Left to Right */}
           <div className="bg-gray-950 rounded-[3rem] p-8 md:p-12 shadow-3xl overflow-hidden relative border border-gray-800 aspect-video md:aspect-square flex items-center justify-center">
             {/* Background Grid/Science Pattern */}
-            <div className="absolute inset-0 opacity-20" style={{backgroundImage: 'radial-gradient(#4CB4E3 0.5px, transparent 0.5px)', backgroundSize: '24px 24px'}}></div>
-            
+            <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#4CB4E3 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
+
             {/* Flow Indicator Arrow: Positioned halfway between origin and growth nodes */}
             <div className="absolute left-[38%] md:left-[42%] top-1/2 -translate-y-1/2 z-30 pointer-events-none animate-pulse-slow">
               <div className="bg-brand-blue/10 p-3 md:p-4 rounded-full border border-brand-blue/30 backdrop-blur-sm shadow-[0_0_30px_rgba(76,180,227,0.3)]">
@@ -46,10 +48,10 @@ const Scalability: React.FC = () => {
                 </svg>
               </div>
             </div>
-            
+
             {/* Flow Container */}
             <div className="relative w-full h-full flex items-center justify-between z-10 px-4 md:px-12">
-              
+
               {/* Origin Node (Left) - Original Company (Pink/Purple Box) */}
               <div className="flex flex-col items-center relative z-20">
                 <div className="w-16 h-16 md:w-24 md:h-24 bg-brand-purple rounded-2xl flex items-center justify-center shadow-[0_0_60px_rgba(188,45,183,0.3)] border border-white/20 relative">
@@ -58,7 +60,7 @@ const Scalability: React.FC = () => {
                   </svg>
                 </div>
                 <div className="mt-4 w-max text-center">
-                   <span className="text-[11px] font-mono text-brand-purple tracking-widest font-bold">Original Company</span>
+                  <span className="text-[11px] font-mono text-brand-purple tracking-widest font-bold">Original Company</span>
                 </div>
               </div>
 
@@ -70,8 +72,8 @@ const Scalability: React.FC = () => {
                   { label: "Company 3", id: "03" },
                   { label: "Company 4", id: "04" }
                 ].map((node, i) => (
-                  <div 
-                    key={i} 
+                  <div
+                    key={i}
                     className="flex items-center space-x-3 bg-gray-900/80 backdrop-blur-sm border border-gray-700 p-2 md:p-3 rounded-xl transform transition-all duration-500 hover:scale-110 hover:border-brand-blue/50 group/node cursor-default"
                     style={{ animation: `slideIn 0.8s ease-out forwards ${i * 0.15}s`, opacity: 0 }}
                   >
@@ -81,10 +83,10 @@ const Scalability: React.FC = () => {
                       </svg>
                     </div>
                     <div>
-                       <div className="text-[10px] font-mono text-gray-500 uppercase tracking-tighter group-hover/node:text-brand-blue font-bold">{node.label}</div>
-                       <div className="h-1 w-12 bg-gray-800 rounded-full mt-1 overflow-hidden">
-                          <div className="h-full bg-brand-blue w-full animate-flow-shimmer"></div>
-                       </div>
+                      <div className="text-[10px] font-mono text-gray-500 uppercase tracking-tighter group-hover/node:text-brand-blue font-bold">{node.label}</div>
+                      <div className="h-1 w-12 bg-gray-800 rounded-full mt-1 overflow-hidden">
+                        <div className="h-full bg-brand-blue w-full animate-flow-shimmer"></div>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -94,7 +96,7 @@ const Scalability: React.FC = () => {
           </div>
         </div>
       </div>
-      
+
       <style>{`
         @keyframes flow-shimmer {
           0% { transform: translateX(-100%); }

@@ -1,10 +1,11 @@
-
 import React from 'react';
 import Logo from './Logo';
+import NetworkBackground from './NetworkBackground';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden bg-white hex-pattern">
+    <section className="relative pt-32 pb-20 overflow-hidden bg-white">
+      <NetworkBackground />
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="z-10">
           <div className="inline-flex items-center bg-brand-purple/5 border border-brand-purple/10 p-2 rounded-2xl mb-6">
@@ -30,18 +31,11 @@ const Hero: React.FC = () => {
         <div className="relative">
           <div className="absolute -inset-4 bg-gradient-to-tr from-brand-purple/20 to-brand-blue/20 rounded-[3rem] blur-3xl"></div>
           <div className="relative bg-white border border-gray-200 rounded-3xl shadow-2xl overflow-hidden p-4 min-h-[400px] flex items-center justify-center">
-            <img 
-              src="Dashboard_Finance.png" 
-              alt="QCore Finance Dashboard" 
-              className="rounded-2xl w-full h-auto grayscale-[0.1] hover:grayscale-0 transition-all duration-700 shadow-inner"
+            <img
+              src="/Hero_Visual.png"
+              alt="Nexus Intelligence Visual"
+              className="rounded-2xl w-full h-auto transition-all duration-700 shadow-inner"
             />
-            
-            <div className="absolute top-8 right-8 bg-glass px-4 py-2 rounded-lg border border-white/50 shadow-xl">
-              <div className="flex items-center space-x-2 text-brand-purple font-bold">
-                <span className="animate-pulse">●</span>
-                <span className="text-xs uppercase tracking-tighter">Live Data Feed</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>

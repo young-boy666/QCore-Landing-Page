@@ -1,53 +1,60 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexus for QCore | From Data to Decision</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                purple: '#BC2DB7',
-                blue: '#4CB4E3',
-              }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus for QCore | From Data to Decision</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#BC2DB7',
+              blue: '#4CB4E3',
             }
           }
         }
       }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 90px;
-      }
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      .gradient-text {
-        background: linear-gradient(135deg, #BC2DB7 0%, #4CB4E3 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .bg-glass {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(10px);
-      }
-      .bg-dark-glass {
-        background: rgba(17, 24, 39, 0.8);
-        backdrop-filter: blur(12px);
-      }
-      .hex-pattern {
-        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-opacity='0.03' fill='%23BC2DB7'/%3E%3C/svg%3E");
-      }
-    </style>
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    html {
+      font-size: 75%;
+      scroll-behavior: smooth;
+      scroll-padding-top: 60px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #BC2DB7 0%, #4CB4E3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .bg-glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+    }
+
+    .bg-dark-glass {
+      background: rgba(17, 24, 39, 0.8);
+      backdrop-filter: blur(12px);
+    }
+
+    .hex-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-opacity='0.03' fill='%23BC2DB7'/%3E%3C/svg%3E");
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -58,7 +65,10 @@
 }
 </script>
 </head>
-  <body class="bg-gray-50 text-gray-900 selection:bg-brand-purple/10 selection:text-brand-purple">
-    <div id="root"></div>
-  </body>
+
+<body class="bg-gray-50 text-gray-900 selection:bg-brand-purple/10 selection:text-brand-purple">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>

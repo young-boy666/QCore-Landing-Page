@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import NetworkBackground from './NetworkBackground';
 
 const FeatureBlock = ({ label }: { label: string }) => (
   <div className="group">
@@ -15,11 +16,11 @@ const FeatureBlock = ({ label }: { label: string }) => (
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.143-7.714L1 12l6.857-2.143L11 3z" />
         </svg>
       </div>
-      
+
       {/* Glint effect on hover */}
       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none"></div>
 
-      <span className="text-lg md:text-xl font-black text-brand-blue tracking-tight transition-all duration-500 group-hover:tracking-widest">
+      <span className="text-lg md:text-xl font-black text-brand-blue tracking-tight transition-all duration-500">
         {label}
       </span>
     </div>
@@ -34,12 +35,12 @@ const FeatureShowcase: React.FC = () => {
     finance: {
       title: "Working Capital Insights",
       description: "Monitor your financial health in real-time. Identify cash flow trends instantly and optimise collections.",
-      image: "Dashboard_Finance.png"
+      image: "/Dashboard_finance.png"
     },
     performance: {
       title: "Utilisation & Performance",
       description: "Track team performance against targets. Optimise resource allocation with deep historical context.",
-      image: "Dashboard_Utilisation.png"
+      image: "/Dashboard_Utilisation.png"
     }
   };
 
@@ -51,7 +52,8 @@ const FeatureShowcase: React.FC = () => {
   };
 
   return (
-    <section id="features" className="py-24 bg-white">
+    <section id="features" className="py-24 bg-white relative">
+      <NetworkBackground />
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-end justify-between mb-16 gap-8">
           <div className="w-full">
@@ -61,13 +63,13 @@ const FeatureShowcase: React.FC = () => {
             </p>
           </div>
           <div className="flex bg-gray-100 p-1.5 rounded-2xl flex-shrink-0">
-            <button 
+            <button
               onClick={() => handleTabChange('finance')}
               className={`px-8 py-3 rounded-xl text-sm font-bold transition-all ${activeTab === 'finance' ? 'bg-white shadow-lg text-gray-900' : 'text-gray-500 hover:text-gray-700'}`}
             >
               Working Capital
             </button>
-            <button 
+            <button
               onClick={() => handleTabChange('performance')}
               className={`px-8 py-3 rounded-xl text-sm font-bold transition-all ${activeTab === 'performance' ? 'bg-white shadow-lg text-gray-900' : 'text-gray-500 hover:text-gray-700'}`}
             >
@@ -82,7 +84,7 @@ const FeatureShowcase: React.FC = () => {
               <h3 className="text-3xl font-bold mb-4">{current.title}</h3>
               <p className="text-gray-600 leading-relaxed text-lg">{current.description}</p>
             </div>
-            
+
             <div className="grid grid-cols-1 gap-4 mt-auto">
               <FeatureBlock label="KPIs" />
               <FeatureBlock label="Aesthetic Plots" />
@@ -91,33 +93,32 @@ const FeatureShowcase: React.FC = () => {
           </div>
 
           <div className="lg:col-span-7 lg:sticky lg:top-32">
-             <div className="relative rounded-[3rem] border border-gray-200 shadow-2xl overflow-hidden bg-gray-50 aspect-video flex items-center justify-center group">
-                {!imageLoaded && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-gray-50 animate-pulse">
-                    <div className="text-gray-300 font-black tracking-widest uppercase">Initialising View...</div>
-                  </div>
-                )}
-                
-                <img 
-                  key={current.image}
-                  src={current.image} 
-                  alt={current.title} 
-                  className={`w-full h-full object-contain transition-all duration-1000 ${imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`}
-                  onLoad={() => setImageLoaded(true)}
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none"></div>
-             </div>
-             <div className="mt-8 flex items-center justify-center gap-6 text-[10px] font-black text-gray-400 uppercase tracking-[0.25em]">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-brand-purple animate-ping"></div>
-                  Real-time Sync
+            <div className="relative rounded-[3rem] border border-gray-200 shadow-2xl overflow-hidden bg-gray-50 aspect-video flex items-center justify-center group">
+              {!imageLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-50 animate-pulse">
+                  <div className="text-gray-300 font-black tracking-widest uppercase">Initialising View...</div>
                 </div>
-                <div className="w-1.5 h-1.5 rounded-full bg-gray-200"></div>
-                <div>Custom Visuals</div>
-                <div className="w-1.5 h-1.5 rounded-full bg-gray-200"></div>
-                <div>Secure Access</div>
-             </div>
+              )}
+
+              <img
+                key={current.image}
+                src={current.image}
+                alt={current.title}
+                className={`w-full h-full object-contain transition-all duration-1000 ${imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`}
+                onLoad={() => setImageLoaded(true)}
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none"></div>
+            </div>
+            <div className="mt-8 flex items-center justify-center gap-6 text-[10px] font-black text-gray-400 uppercase tracking-[0.25em]">
+              <div className="flex items-center gap-2">
+                LIVE DATA
+              </div>
+              <div className="w-1.5 h-1.5 rounded-full bg-gray-200"></div>
+              <div>Custom Visuals</div>
+              <div className="w-1.5 h-1.5 rounded-full bg-gray-200"></div>
+              <div>Secure Access</div>
+            </div>
           </div>
         </div>
       </div>

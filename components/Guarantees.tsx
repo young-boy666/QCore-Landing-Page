@@ -1,13 +1,15 @@
 
 import React from 'react';
+import NetworkBackground from './NetworkBackground';
 
 const Guarantees: React.FC = () => {
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-24 bg-white relative">
+      <NetworkBackground />
       <div className="max-w-7xl mx-auto px-6">
         <div className="bg-gradient-to-br from-gray-900 to-gray-950 rounded-[3rem] p-12 lg:p-20 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-brand-purple/10 rounded-full blur-[100px]"></div>
-          
+
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight">
@@ -17,7 +19,7 @@ const Guarantees: React.FC = () => {
               <p className="text-gray-300 text-lg mb-12">
                 As consultants, we don't just make promises, we deliver results. We stand behind our work with guarantees.
               </p>
-              
+
               <div className="space-y-6">
                 {[
                   { title: "Data Security First", text: "We always prioritise your data security and safety" },
@@ -45,12 +47,12 @@ const Guarantees: React.FC = () => {
                   {/* Shield Path */}
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2.944a11.955 11.955 0 01-8.618 3.040L3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622l-.382-3.016a11.955 11.955 0 01-8.618-3.040z" />
                   {/* Tick Path with animation */}
-                  <path 
+                  <path
                     className="tick-path"
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2.5} 
-                    d="M9 12l2 2 4-4" 
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M9 12l2 2 4-4"
                   />
                 </svg>
               </div>
@@ -58,7 +60,7 @@ const Guarantees: React.FC = () => {
               <p className="text-gray-300 mb-8">
                 Not sure if we are a fit? Book a free session and we will scope your current reporting and show you exactly where you're losing time.
               </p>
-              <button 
+              <button
                 onClick={() => window.location.href = 'https://www.nexustech.je/contact/'}
                 className="w-full bg-brand-purple text-white py-5 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:bg-brand-blue shadow-xl shadow-black/40"
               >

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import NetworkBackground from './NetworkBackground';
 
 const Process: React.FC = () => {
   const steps = [
@@ -33,7 +34,8 @@ const Process: React.FC = () => {
   ];
 
   return (
-    <section id="process" className="py-24 bg-white">
+    <section id="process" className="py-24 bg-white relative">
+      <NetworkBackground />
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Rapid and Seamless Deployment.</h2>

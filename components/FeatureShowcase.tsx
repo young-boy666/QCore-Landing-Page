@@ -27,6 +27,9 @@ const FeatureBlock = ({ label }: { label: string }) => (
   </div>
 );
 
+import financeDashboard from '@/src/assets/Dashboard_finance.png';
+import utilisationDashboard from '@/src/assets/Dashboard_Utilisation.png';
+
 const FeatureShowcase: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'finance' | 'performance'>('finance');
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -35,12 +38,12 @@ const FeatureShowcase: React.FC = () => {
     finance: {
       title: "Working Capital Insights",
       description: "Monitor your financial health in real-time. Identify cash flow trends instantly and optimise collections.",
-      image: "./Dashboard_finance.png"
+      image: financeDashboard
     },
     performance: {
       title: "Utilisation & Performance",
       description: "Track team performance against targets. Optimise resource allocation with deep historical context.",
-      image: "./Dashboard_Utilisation.png"
+      image: utilisationDashboard
     }
   };
 

@@ -1,6 +1,8 @@
 
 import React from 'react';
 
+import mainLogo from '@/src/assets/Main_logo.png';
+
 interface LogoProps {
   className?: string;
   iconOnly?: boolean;
@@ -22,7 +24,7 @@ const Logo: React.FC<LogoProps> = ({ className = "", iconOnly = false, light = f
   return (
     <div className={`flex items-center ${className}`}>
       <img
-        src="./Main_logo.png"
+        src={mainLogo}
         alt="Nexus Technology"
         style={filterStyle}
         className={`h-auto object-contain ${getSizeClass()}`}

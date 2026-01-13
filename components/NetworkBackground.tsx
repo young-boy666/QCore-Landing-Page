@@ -42,7 +42,7 @@ const NetworkBackground: React.FC = () => {
             draw(ctx: CanvasRenderingContext2D) {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(188, 45, 183, 0.15)'; // Sparse purple dot
+                ctx.fillStyle = 'rgba(188, 45, 183, 0.35)'; // More visible purple dot
                 ctx.fill();
             }
         }
@@ -66,7 +66,7 @@ const NetworkBackground: React.FC = () => {
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
                         const opacity = 1 - distance / connectionDistance;
-                        ctx.strokeStyle = `rgba(76, 180, 227, ${opacity * 0.15})`; // Sparse blue line
+                        ctx.strokeStyle = `rgba(76, 180, 227, ${opacity * 0.35})`; // More visible blue line
                         ctx.lineWidth = 1;
                         ctx.stroke();
                     }
@@ -109,7 +109,7 @@ const NetworkBackground: React.FC = () => {
         <canvas
             ref={canvasRef}
             className="absolute inset-0 pointer-events-none z-0"
-            style={{ opacity: 0.6 }}
+            style={{ opacity: 0.8 }}
         />
     );
 };

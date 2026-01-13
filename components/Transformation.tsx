@@ -45,7 +45,7 @@ const Transformation: React.FC = () => {
           <div className="hidden md:block absolute -right-32 top-1/2 w-32 h-[2px] bg-gradient-to-l from-transparent to-brand-blue"></div>
         </div>
 
-        <div className="space-y-6 w-full md:w-1/4">
+        <div className="space-y-6 w-full md:w-1/4 flex flex-col justify-center">
           <div className="bg-white text-gray-900 p-6 rounded-2xl border-l-8 border-brand-blue shadow-2xl transform hover:scale-105 transition-all">
             <div className="text-2xl font-black mb-1 leading-tight">Intelligent</div>
             <div className="text-xs font-bold text-gray-400 uppercase">Data History Storage</div>
@@ -53,6 +53,10 @@ const Transformation: React.FC = () => {
           <div className="bg-white text-gray-900 p-6 rounded-2xl border-l-8 border-brand-blue shadow-2xl transform hover:scale-105 transition-all">
             <div className="text-2xl font-black mb-1 leading-tight">Live Reporting</div>
             <div className="text-xs font-bold text-gray-500 uppercase">DAILY DATA REFRESHES</div>
+          </div>
+          <div className="bg-white text-gray-900 p-6 rounded-2xl border-l-8 border-brand-blue shadow-2xl transform hover:scale-105 transition-all">
+            <div className="text-2xl font-black mb-1 leading-tight">Secure</div>
+            <div className="text-xs font-bold text-gray-500 uppercase">DATA HANDLING AND STORAGE</div>
           </div>
         </div>
       </div>

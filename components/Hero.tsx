@@ -8,9 +8,6 @@ const Hero: React.FC = () => {
       <NetworkBackground />
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="z-10">
-          <div className="inline-flex items-center bg-brand-purple/5 border border-brand-purple/10 p-2 rounded-2xl mb-6">
-            <Logo iconOnly className="opacity-100" />
-          </div>
           <h1 className="text-5xl lg:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
             From Data Overload to <br />
             <span className="gradient-text">Decisive Clarity.</span>

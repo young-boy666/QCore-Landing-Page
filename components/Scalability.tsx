@@ -40,32 +40,58 @@ const Scalability: React.FC = () => {
             {/* Background Grid/Science Pattern */}
             <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#4CB4E3 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
 
-            {/* Flow Indicator Arrow: Positioned halfway between origin and growth nodes */}
-            <div className="absolute left-[38%] md:left-[42%] top-1/2 -translate-y-1/2 z-30 pointer-events-none animate-pulse-slow">
-              <div className="bg-brand-blue/10 p-3 md:p-4 rounded-full border border-brand-blue/30 backdrop-blur-sm shadow-[0_0_30px_rgba(76,180,227,0.3)]">
-                <svg className="w-8 h-8 md:w-10 md:h-10 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </div>
-            </div>
+            {/* Flow Indicator: Four Flowing Lines */}
+            <svg className="absolute inset-0 w-full h-full z-15 pointer-events-none" viewBox="0 0 400 400" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#BC2DB7" stopOpacity="0.2" />
+                  <stop offset="50%" stopColor="#4CB4E3" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#4CB4E3" stopOpacity="0.2" />
+                </linearGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+                  <feMerge>
+                    <feMergeNode in="coloredBlur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              {/* Four Flow Lines */}
+              {[100, 160, 240, 300].map((yEnd, i) => (
+                <path
+                  key={i}
+                  d={`M 110 218 C 180 218, 220 ${yEnd}, 290 ${yEnd}`}
+                  stroke="url(#flowGradient)"
+                  strokeWidth="1.5"
+                  fill="none"
+                  filter="url(#glow)"
+                  className="animate-flow-line"
+                  style={{
+                    strokeDasharray: '10, 20',
+                    animationDelay: `${i * 0.2}s`
+                  }}
+                />
+              ))}
+            </svg>
 
             {/* Flow Container */}
             <div className="relative w-full h-full flex items-center justify-between z-10 px-4 md:px-12">
 
               {/* Origin Node (Left) - Original Company (Pink/Purple Box) */}
-              <div className="flex flex-col items-center relative z-20">
+              <div className="flex flex-col items-center relative z-20 translate-x-1 md:translate-x-2">
+                <div className="mb-4 w-max text-center">
+                  <span className="text-[11px] font-mono text-brand-purple tracking-widest font-bold">Original Company</span>
+                </div>
                 <div className="w-16 h-16 md:w-24 md:h-24 bg-brand-purple rounded-2xl flex items-center justify-center shadow-[0_0_60px_rgba(188,45,183,0.3)] border border-white/20 relative">
                   <svg className="w-8 h-8 md:w-12 md:h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
                   </svg>
                 </div>
-                <div className="mt-4 w-max text-center">
-                  <span className="text-[11px] font-mono text-brand-purple tracking-widest font-bold">Original Company</span>
-                </div>
               </div>
 
               {/* Growth Nodes (Right) - Companies 1-4 */}
-              <div className="flex flex-col gap-4 md:gap-8 relative z-20">
+              <div className="flex flex-col gap-4 md:gap-8 relative z-20 -translate-x-1 md:-translate-x-2">
                 {[
                   { label: "Company 1", id: "01" },
                   { label: "Company 2", id: "02" },
@@ -106,15 +132,15 @@ const Scalability: React.FC = () => {
           from { opacity: 0; transform: translateX(30px); }
           to { opacity: 1; transform: translateX(0); }
         }
-        @keyframes pulse-slow {
-          0%, 100% { transform: translateY(-50%) scale(1); opacity: 0.8; }
-          50% { transform: translateY(-50%) scale(1.05); opacity: 1; }
+        @keyframes flow-line {
+          0% { stroke-dashoffset: 100; }
+          100% { stroke-dashoffset: 0; }
         }
         .animate-flow-shimmer {
           animation: flow-shimmer 2s infinite linear;
         }
-        .animate-pulse-slow {
-          animation: pulse-slow 3s infinite ease-in-out;
+        .animate-flow-line {
+          animation: flow-line 5s infinite linear;
         }
       `}</style>
     </section>

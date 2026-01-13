@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
           <div className="absolute -inset-4 bg-gradient-to-tr from-brand-purple/20 to-brand-blue/20 rounded-[3rem] blur-3xl"></div>
           <div className="relative bg-white border border-gray-200 rounded-3xl shadow-2xl overflow-hidden p-4 min-h-[400px] flex items-center justify-center">
             <img
-              src="/Hero_Visual.png"
+              src="./Hero_Visual.png"
               alt="Nexus Intelligence Visual"
               className="rounded-2xl w-full h-auto transition-all duration-700 shadow-inner"
             />

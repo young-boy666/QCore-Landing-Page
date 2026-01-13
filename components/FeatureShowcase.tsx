@@ -35,12 +35,12 @@ const FeatureShowcase: React.FC = () => {
     finance: {
       title: "Working Capital Insights",
       description: "Monitor your financial health in real-time. Identify cash flow trends instantly and optimise collections.",
-      image: "/Dashboard_finance.png"
+      image: "./Dashboard_finance.png"
     },
     performance: {
       title: "Utilisation & Performance",
       description: "Track team performance against targets. Optimise resource allocation with deep historical context.",
-      image: "/Dashboard_Utilisation.png"
+      image: "./Dashboard_Utilisation.png"
     }
   };
 

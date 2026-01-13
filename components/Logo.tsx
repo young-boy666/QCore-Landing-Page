@@ -22,7 +22,7 @@ const Logo: React.FC<LogoProps> = ({ className = "", iconOnly = false, light = f
   return (
     <div className={`flex items-center ${className}`}>
       <img
-        src="/Main_logo.png"
+        src="./Main_logo.png"
         alt="Nexus Technology"
         style={filterStyle}
         className={`h-auto object-contain ${getSizeClass()}`}
